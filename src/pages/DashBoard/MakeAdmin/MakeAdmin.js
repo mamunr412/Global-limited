@@ -12,7 +12,7 @@ const MakeAdmin = () => {
     }
     const handelAdmin = (e) => {
         const user = { email };
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://lit-fjord-60113.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -21,17 +21,6 @@ const MakeAdmin = () => {
         })
 
         e.preventDefault()
-        // const user = { email }
-        // fetch('http://localhost:5000//users/admin', {
-        //     method: "PUT",
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(user)
-        //         .then(res => res.json())
-        //         .then(data => console.log(data))
-        // })
-        // e.preventDefault()
 
     }
     return (

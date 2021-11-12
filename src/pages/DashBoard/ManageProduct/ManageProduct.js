@@ -10,7 +10,7 @@ import SingleProduct from '../SingleProduct/SingleProduct';
 const ManageProduct = () => {
     const [Products, setproducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://lit-fjord-60113.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setproducts(data))
 

@@ -11,7 +11,7 @@ const SingleOder = ({ singleOder, setMyOders, myOders }) => {
 
     const handelDelete = (_id) => {
 
-        fetch(`http://localhost:5000/oderDelete/${_id}`, {
+        fetch(`https://lit-fjord-60113.herokuapp.com/oderDelete/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

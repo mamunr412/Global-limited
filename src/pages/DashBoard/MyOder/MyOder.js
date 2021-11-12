@@ -12,7 +12,7 @@ const MyOder = () => {
     const [myOders, setMyOders] = useState([]);
     const { user } = useAuth();
     useEffect(() => {
-        fetch(`http://localhost:5000/oderBike?email=${user.email}`)
+        fetch(`https://lit-fjord-60113.herokuapp.com/oderBike?email=${user.email}`)
             .then(res => res.json())
             .then(data => setMyOders(data))
     }, [user.email]);

@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 const ManageSingleOder = ({ singleOder }) => {
 
     const handelStatusUpdate = (_id) => {
-        fetch(`http://localhost:5000/Update/${_id}`, {
+        fetch(`https://lit-fjord-60113.herokuapp.com/Update/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

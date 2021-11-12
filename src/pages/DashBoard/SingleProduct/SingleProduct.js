@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 const SingleProduct = ({ singleProduct, Products, setproducts }) => {
 
     const handelProductDelete = (_id) => {
-        fetch(`http://localhost:5000/deleteProduct/${_id}`, {
+        fetch(`https://lit-fjord-60113.herokuapp.com/deleteProduct/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

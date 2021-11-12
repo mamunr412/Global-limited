@@ -21,7 +21,7 @@ const Oder = () => {
     const { user } = useAuth()
     useEffect(() => {
 
-        fetch(`http://localhost:5000/products/${_id}`)
+        fetch(`https://lit-fjord-60113.herokuapp.com/products/${_id}`)
             .then(res => res.json())
             .then(data => setSingleBike(data))
     }, []);
@@ -31,7 +31,7 @@ const Oder = () => {
         book.status = "Pending"
         book.pack = singleBike
 
-        fetch('http://localhost:5000/oderBike', {
+        fetch('https://lit-fjord-60113.herokuapp.com/oderBike', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

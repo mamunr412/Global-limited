@@ -40,26 +40,28 @@ function DashBoard(props) {
         <div>
             <Toolbar />
             <Divider />
-            <Link
-                style={{ textDecoration: 'none' }}
-                to='/collection'> <Button
-                    sx={{ fontSize: "18px", color: "black" }}
-                    color="inherit">Our Collection</Button> </Link>
-            <br />
+            {!admin && <Box>
+                <Link
+                    style={{ textDecoration: 'none' }}
+                    to='/collection'> <Button
+                        sx={{ fontSize: "18px", color: "black" }}
+                        color="inherit">Our Collection</Button> </Link>
+                <br />
 
-            <Link
-                style={{ textDecoration: 'none' }}
-                to={`${url}/pay`}> <Button
-                    sx={{ fontSize: "18px", color: "black" }} color="inherit">PayMent</Button> </Link>
-            <br />
+                <Link
+                    style={{ textDecoration: 'none' }}
+                    to={`${url}/pay`}> <Button
+                        sx={{ fontSize: "18px", color: "black" }} color="inherit">PayMent</Button> </Link>
+                <br />
 
-            <Link
-                style={{ textDecoration: 'none' }} to={`${url}/myOder`}> <Button sx={{ fontSize: "18px", color: "black" }} color="inherit">My Oder</Button> </Link>
-            <br />
-            <Link
-                style={{ textDecoration: 'none' }} to={`${url}/review`}> <Button
-                    sx={{ fontSize: "18px", color: "black" }} color="inherit">Review</Button> </Link>
-            <br />
+                <Link
+                    style={{ textDecoration: 'none' }} to={`${url}/myOder`}> <Button sx={{ fontSize: "18px", color: "black" }} color="inherit">My Oders</Button> </Link>
+                <br />
+                <Link
+                    style={{ textDecoration: 'none' }} to={`${url}/review`}> <Button
+                        sx={{ fontSize: "18px", color: "black" }} color="inherit">Review</Button> </Link>
+                <br />
+            </Box>}
             {admin && <Box>
                 <Link
                     style={{ textDecoration: 'none' }}

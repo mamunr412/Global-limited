@@ -10,7 +10,7 @@ import ManageSingleOder from '../ManageSingleOder/ManageSingleOder';
 const ManageAllOder = () => {
     const [allOders, setAllOders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allOders')
+        fetch('https://lit-fjord-60113.herokuapp.com/allOders')
             .then(res => res.json())
             .then(data => setAllOders(data))
     }, [allOders])
