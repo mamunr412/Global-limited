@@ -1,6 +1,7 @@
 import { Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import Container from '@mui/material/Container';
+import CircularProgress from '@mui/material/CircularProgress';
 import React, { useEffect, useState } from 'react';
 import Bike from '../Bike/Bike';
 
@@ -21,12 +22,13 @@ const Bikes = () => {
 
             <Box sx={{ flexGrow: 1 }}>
                 <Container >
-                    <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+                    {sliceBokes.length === 0 ? <CircularProgress /> : <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                         {sliceBokes.map(bike => <Bike
                             key={bike._id}
                             bike={bike}
                         ></Bike>)}
-                    </Grid>
+                    </Grid>}
+
 
                 </Container>
             </Box>

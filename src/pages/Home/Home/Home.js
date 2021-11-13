@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from '../../Footer/Footer/Footer';
+import Footer from '../../Shared/Footer/Footer';
 import AllReviews from '../AllReviews/AllReviews';
 import Bikes from '../Bikes/Bikes';
 import Headerbanner from '../HeaderBanner/Headerbanner';
