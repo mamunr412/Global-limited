@@ -12,11 +12,11 @@ const Bikes = () => {
             .then(data => setBikes(data))
     }, []);
     const sliceBokes = bikes.slice(0, 6);
-    console.log(sliceBokes)
+
     return (
-        <>
+        <div style={{ backgroundColor: "#f2f4f5" }}>
             <Typography variant="h3" gutterBottom component="div">
-                Bikes
+                Our Bikes Collection
             </Typography>
 
             <Box sx={{ flexGrow: 1 }}>
@@ -31,7 +31,7 @@ const Bikes = () => {
                 </Container>
             </Box>
 
-        </>
+        </div>
     );
 };
 

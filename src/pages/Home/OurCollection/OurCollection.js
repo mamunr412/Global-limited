@@ -13,7 +13,7 @@ const OurCollection = () => {
             .then(data => setAllBikes(data))
     }, [])
     return (
-        <div>
+        <div style={{ backgroundColor: "#f2f4f5" }}>
             <Navigation />
             <Typography sx={{ my: 4 }} variant="h3" gutterBottom component="div">
                 Our Collection

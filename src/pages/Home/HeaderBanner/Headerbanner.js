@@ -1,44 +1,47 @@
 import React from 'react';
 import { Container, Carousel } from 'react-bootstrap';
+import img1 from '../../../images/yzf-r15-v360a4a5958c528.webp';
+import img2 from '../../../images/yamaha-yzf-r15-right-side-view0.jpeg';
+import img3 from '../../../images/right-front-three-quarter-11.jpeg';
 
 const Headerbanner = () => {
     return (
         <div className='my-5'>
             <Container>
+
                 <Carousel>
                     <Carousel.Item>
                         <img
+                            style={{ height: "500px" }}
                             className="d-block w-100"
-                            src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW90b3JiaWtlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80"
+                            src={img1}
                             alt="First slide"
                         />
                         <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
+                            style={{ height: "500px" }}
                             className="d-block w-100"
-                            src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW90b3JiaWtlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80"
+                            src={img2}
                             alt="Second slide"
                         />
 
                         <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            x
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
+                            style={{ height: "500px" }}
                             className="d-block w-100"
-                            src="https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW90b3JiaWtlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80"
+                            src={img3}
                             alt="Third slide"
                         />
 
                         <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>

@@ -20,6 +20,7 @@ import ManageAllOder from '../ManageAllOder/ManageAllOder';
 import AddProduct from '../AddProduct/AddProduct';
 import ManageProduct from '../ManageProduct/ManageProduct';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 
 
 const drawerWidth = 240;
@@ -37,7 +38,7 @@ function DashBoard(props) {
     };
 
     const drawer = (
-        <div>
+        <div >
             <Toolbar />
             <Divider />
             {!admin && <Box>
@@ -63,6 +64,10 @@ function DashBoard(props) {
                 <br />
             </Box>}
             {admin && <Box>
+                <Link
+                    style={{ textDecoration: 'none' }}
+                    to="/home"> <Button
+                        sx={{ fontSize: "18px", color: "black" }} color="inherit">Home</Button> </Link>
                 <Link
                     style={{ textDecoration: 'none' }}
                     to={`${url}/allOders`}> <Button
@@ -93,7 +98,7 @@ function DashBoard(props) {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex' }} >
             <CssBaseline />
             <AppBar
                 position="fixed"
@@ -114,7 +119,8 @@ function DashBoard(props) {
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
                         {user.displayName}
-
+                    </Typography>
+                    <Typography variant="h6" noWrap component="div">
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -169,18 +175,18 @@ function DashBoard(props) {
                     <Route path={`${path}/review`}>
                         <Review></Review>
                     </Route>
-                    <Route path={`${path}/allOders`}>
+                    <AdminRoute path={`${path}/allOders`}>
                         <ManageAllOder></ManageAllOder>
-                    </Route>
-                    <Route path={`${path}/addProduct`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/addProduct`}>
                         <AddProduct></AddProduct>
-                    </Route>
-                    <Route path={`${path}/manageProduct`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageProduct`}>
                         <ManageProduct></ManageProduct>
-                    </Route>
-                    <Route path={`${path}/makeAdmin`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
-                    </Route>
+                    </AdminRoute>
                 </Switch>
 
             </Box>
