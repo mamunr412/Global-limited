@@ -6,9 +6,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Box } from '@mui/system';
 
-const ManageSingleOder = ({ singleOder }) => {
+const ManageSingleOder = ({ singleOder, setAllOders, allOders }) => {
 
+    // update pending status 
     const handelStatusUpdate = (_id) => {
         fetch(`https://lit-fjord-60113.herokuapp.com/Update/${_id}`, {
             method: 'PUT',
@@ -23,10 +25,32 @@ const ManageSingleOder = ({ singleOder }) => {
                 }
             })
     }
+    // delete user oder 
+    const deleteUserOder = (_id) => {
+        const processed = window.confirm('Are You sure Want to Delete it?');
+        if (processed) {
+            fetch(`http://localhost:5000/oderDelete/${_id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        alert("Deleted Confirmed")
+                        const filterDelete = allOders.filter(deleteData => deleteData._id !== _id);
+                        setAllOders(filterDelete);
+                    }
+
+                })
+        }
+
+    }
+
+
+
 
     return (
         <Grid item xs={4} sm={4} md={4} >
-            <Card sx={{ maxWidth: 345, height: "470px" }}>
+            <Card sx={{ maxWidth: 345, height: "500px" }}>
                 <CardMedia
 
                     component="img"
@@ -50,14 +74,23 @@ const ManageSingleOder = ({ singleOder }) => {
                             CC_Category : {singleOder.pack.CC_Category}
                         </Typography>
                         <Typography variant="button" display="block" gutterBottom>
+                            Email: {singleOder.email}
+                        </Typography>
+                        <Typography variant="button" display="block" gutterBottom>
                             Status: {singleOder.status}
                         </Typography>
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button
-                        onClick={() => handelStatusUpdate(singleOder._id)}
-                        variant="contained">Approved</Button>
+                    <Box>
+                        <Button
+                            sx={{ mr: 5, backgroundColor: "red" }}
+                            onClick={() => deleteUserOder(singleOder._id)}
+                            variant="contained">Delete</Button>
+                        <Button
+                            onClick={() => handelStatusUpdate(singleOder._id)}
+                            variant="contained">Approved</Button>
+                    </Box>
                 </CardActions>
             </Card>
 

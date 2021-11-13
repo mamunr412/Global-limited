@@ -28,7 +28,8 @@ const ManageAllOder = () => {
                         {allOders.map(singleOder => <ManageSingleOder
                             key={singleOder._id}
                             singleOder={singleOder}
-
+                            allOders={allOders}
+                            setAllOders={setAllOders}
                         ></ManageSingleOder>)}
                     </Grid>
                 </Box>

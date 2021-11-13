@@ -14,6 +14,7 @@ import DashBoard from './pages/DashBoard/DashBoard/DashBoard';
 import OurCollection from './pages/Home/OurCollection/OurCollection';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import Oder from './pages/Home/Oder/Oder';
+import NotFound from './pages/NotFound/NotFound';
 
 
 function App() {
@@ -43,6 +44,9 @@ function App() {
             <PrivateRoute path="/dashboard">
               <DashBoard></DashBoard>
             </PrivateRoute>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
           </Switch>
         </Router>
       </AuthProvider>

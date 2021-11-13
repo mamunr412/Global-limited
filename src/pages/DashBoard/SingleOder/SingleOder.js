@@ -10,21 +10,21 @@ import Button from '@mui/material/Button';
 const SingleOder = ({ singleOder, setMyOders, myOders }) => {
 
     const handelDelete = (_id) => {
-
-        fetch(`https://lit-fjord-60113.herokuapp.com/oderDelete/${_id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                const processed = window.confirm('Are You sure Want to Delete it?');
-                if (processed) {
+        const processed = window.confirm('Are You sure Want to Delete it?');
+        if (processed) {
+            fetch(`https://lit-fjord-60113.herokuapp.com/oderDelete/${_id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
                     if (data.deletedCount) {
                         alert("Deleted Confirmed")
                         const filterDelete = myOders.filter(deleteData => deleteData._id !== _id);
                         setMyOders(filterDelete);
                     }
-                }
-            })
+
+                })
+        }
     }
     return (
         <Grid item xs={4} sm={4} md={4} >
