@@ -17,7 +17,7 @@ const SingleReview = ({ review }) => {
                 <Typography variant="h6" component="div">
                     {review.email}
                 </Typography>
-                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                <Typography variant="h6" component="div">
                     <Rating name="read-only" value={review.rating} readOnly />
                 </Typography>
                 <Typography variant="body2">

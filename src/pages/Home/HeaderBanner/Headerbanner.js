@@ -29,7 +29,7 @@ const Headerbanner = () => {
                         />
 
                         <Carousel.Caption>
-                            x
+
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>

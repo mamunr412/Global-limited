@@ -15,22 +15,19 @@ const AllReviews = () => {
         fetch('https://lit-fjord-60113.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setAllReviews(data))
-    }, [allReviews])
+    }, [])
     return (
         <div style={{ backgroundColor: "#f2f4f5" }}>
             <Typography sx={{ my: 5 }} variant="h3" gutterBottom component="div">
                 Customers Review
             </Typography>
-
             <Box sx={{ flexGrow: 1 }}>
                 <Container >
                     <Carousel>
                         {allReviews.map(review => <SingleReview key={review._id}
                             review={review}
                         ></SingleReview>)}
-
                     </Carousel>
-
                 </Container>
             </Box>
 
