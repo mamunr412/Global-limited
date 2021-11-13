@@ -29,7 +29,7 @@ const ManageSingleOder = ({ singleOder, setAllOders, allOders }) => {
     const deleteUserOder = (_id) => {
         const processed = window.confirm('Are You sure Want to Delete it?');
         if (processed) {
-            fetch(`http://localhost:5000/oderDelete/${_id}`, {
+            fetch(`https://lit-fjord-60113.herokuapp.com/oderDelete/${_id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
