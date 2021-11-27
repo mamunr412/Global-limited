@@ -9,7 +9,7 @@ import Rating from '@mui/material/Rating';
 
 const SingleReview = ({ review }) => {
     return (
-        <Card >
+        <Card sx={{width:'95%',height:'250px'}} >
             <CardContent>
                 <Typography variant="h5" component="div">
                     {review.name}
@@ -20,7 +20,7 @@ const SingleReview = ({ review }) => {
                 <Typography variant="h6" component="div">
                     <Rating name="read-only" value={review.rating} readOnly />
                 </Typography>
-                <Typography variant="body2">
+                <Typography variant="body2" sx={{ mx:'20px',wordWrap:'break-word'}}>
                     {review.text}
                 </Typography>
             </CardContent>

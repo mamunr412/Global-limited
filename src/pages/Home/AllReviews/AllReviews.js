@@ -1,13 +1,17 @@
-import React from 'react';
-import { Grid, Typography } from '@mui/material';
+import React,  { Component } from 'react';
+import { Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import Container from '@mui/material/Container';
-import Carousel from 'react-material-ui-carousel';
+import Carousel from 'react-elastic-carousel';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import SingleReview from '../SingleReview/SingleReview';
 
+const breakPoints=[
+{width:1, itemsToShow:1},
+{width:550, itemsToShow:2},
 
+]
 
 const AllReviews = () => {
     const [allReviews, setAllReviews] = useState([]);
@@ -23,7 +27,7 @@ const AllReviews = () => {
             </Typography>
             <Box sx={{ flexGrow: 1 }}>
                 <Container >
-                    <Carousel>
+                    <Carousel breakPoints={breakPoints}>
                         {allReviews.map(review => <SingleReview key={review._id}
                             review={review}
                         ></SingleReview>)}
