@@ -192,7 +192,7 @@ export default function Navigation() {
                         component="div"
                         sx={{ display: { xs: 'none', sm: 'block' } }}
                     >
-                       chaldal
+                   Global limited
                     </Typography>
 
                     <Box sx={{ flexGrow: 1 }} />
