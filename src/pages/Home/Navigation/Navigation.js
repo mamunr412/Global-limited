@@ -11,6 +11,20 @@ import Button from '@mui/material/Button';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import useAuth from './../../Login/Hooks/useAuth';
 import { NavLink } from 'react-router-dom';
+import { Divider, List, SwipeableDrawer } from '@mui/material';
+import Order from '../Order/Order';
+import clsx from 'clsx';
+import { makeStyles } from "@mui/styles";
+
+
+const useStyles = makeStyles({
+    list: {
+      width: 250,
+    },
+    fullList: {
+      width: 'auto',
+    },
+  });
 
 
 
@@ -18,7 +32,7 @@ export default function Navigation() {
     const { user, logOut } = useAuth()
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
+    const classes = useStyles();
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -34,6 +48,41 @@ export default function Navigation() {
     const handleMobileMenuOpen = (event) => {
         setMobileMoreAnchorEl(event.currentTarget);
     };
+
+
+    const [state, setState] = React.useState({
+  
+        right: false,
+      });
+    const toggleDrawer = (anchor, open) => (event) => {
+        if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+          return;
+        }
+    
+        setState({ ...state, [anchor]: open });
+      
+        
+      };
+      const list = (anchor) => (
+        <div
+          className={clsx(classes.list, {
+            [classes.fullList]: 'right' === 'top' || 'right' === 'bottom',
+          })}
+          role="presentation"
+        //   onClick={toggleDrawer('right', false)}
+        //   onKeyDown={toggleDrawer('right', false)}
+        >
+          <List>
+            <div className="text-center"
+            > <h3>Shopping Cart</h3> </div>
+          </List>
+          <Divider />
+          <List>
+           <Order ></Order>
+          </List>
+         
+        </div>
+      );
 
     const menuId = 'primary-search-account-menu';
     const renderMenu = (
@@ -86,14 +135,15 @@ export default function Navigation() {
             </MenuItem>
             <MenuItem>
                 <NavLink
-                    to="/collection"
+                    to="/products"
                     className={isActive =>
                         "nav-link" + (!isActive ? " unselected" : "")
                     }
                 >
-                    Our Collection
+             All Products
                 </NavLink>
             </MenuItem>
+          
             <MenuItem>
                 <NavLink
                     to="/dashboard"
@@ -142,7 +192,7 @@ export default function Navigation() {
                         component="div"
                         sx={{ display: { xs: 'none', sm: 'block' } }}
                     >
-                        MotorBike Shop
+                       chaldal
                     </Typography>
 
                     <Box sx={{ flexGrow: 1 }} />
@@ -158,12 +208,34 @@ export default function Navigation() {
                         </NavLink>
                         <NavLink
                             style={{ color: 'white' }}
-                            to="/collection"
+                            to="/products"
                             className={isActive =>
                                 "nav-link" + (!isActive ? " unselected" : "")
                             }
                         >
-                            <Button color="inherit">Our Collection</Button>
+                            <Button color="inherit">All Products</Button>
+                        </NavLink>
+                        <NavLink
+                            style={{ color: 'white' }}
+                            to="/products"
+                            className={isActive =>
+                                "nav-link" + (!isActive ? " unselected" : "")
+                            }
+                        >
+                           <React.Fragment >
+                           <Button onClick={toggleDrawer('right', true)} color="inherit">Cart</Button>
+         {/* <Button onClick={toggleDrawer('right', true)} variant="contained" color="secondary">
+        Add TO cart
+        </Button> */}
+          <SwipeableDrawer
+            anchor={'right'}
+            open={state['right']}
+            onClose={toggleDrawer('right', false)}
+            onOpen={toggleDrawer('right', true)}
+          >
+            {list('right')}
+          </SwipeableDrawer>
+        </React.Fragment>
                         </NavLink>
                         <NavLink
                             style={{ color: 'white' }}

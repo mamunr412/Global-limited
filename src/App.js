@@ -11,10 +11,13 @@ import Login from './pages/Login/Login/Login';
 import Register from './pages/Login/Register/Register';
 import AuthProvider from './pages/Login/AuthProvider/AuthProvider';
 import DashBoard from './pages/DashBoard/DashBoard/DashBoard';
-import OurCollection from './pages/Home/OurCollection/OurCollection';
+// import OurCollection from './pages/Home/OurCollection/OurCollection';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
-import Oder from './pages/Home/Oder/Oder';
+// import Oder from './pages/Home/Oder/Oder';
 import NotFound from './pages/NotFound/NotFound';
+// import SingleProduct from './pages/Home/SingleProduct/SingleProduct';
+import Products from './pages/Home/Products/Products';
+
 
 
 function App() {
@@ -35,12 +38,12 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
-            <PrivateRoute exact path="/collection">
-              <OurCollection></OurCollection>
+            <PrivateRoute exact path="/products">
+              <Products/>
             </PrivateRoute>
-            <PrivateRoute exact path="/collection/:_id">
-              <Oder></Oder>
-            </PrivateRoute>
+            {/* <PrivateRoute exact path="/product/:_id">
+          <SingleProduct></SingleProduct>
+            </PrivateRoute> */}
             <PrivateRoute path="/dashboard">
               <DashBoard></DashBoard>
             </PrivateRoute>

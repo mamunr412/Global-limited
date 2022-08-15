@@ -1,19 +1,21 @@
 import React from 'react';
 import Footer from '../../Shared/Footer/Footer';
 import AllReviews from '../AllReviews/AllReviews';
-import Bikes from '../Bikes/Bikes';
+
 import Headerbanner from '../HeaderBanner/Headerbanner';
 import Navigation from '../Navigation/Navigation';
-import News from '../News/News';
+
+import Products from '../Products/Products';
 
 const Home = () => {
+   
     return (
         <div style={{ backgroundColor: "#f2f4f5" }}>
             <Navigation></Navigation>
             <Headerbanner></Headerbanner>
-            <Bikes></Bikes>
+             <Products />
             <AllReviews></AllReviews>
-            <News></News>
+            {/* <News></News> */}
             <Footer></Footer>
     
         </div>

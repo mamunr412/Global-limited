@@ -14,7 +14,7 @@ const Headerbanner = () => {
                         <img
                             style={{ height: "500px" }}
                             className="d-block w-100"
-                            src={img1}
+                            src='https://www.wamatechnology.com/wp-content/uploads/2018/06/Tips-Tricks-for-a-better-eCommerce-website-banner-image.jpg'
                             alt="First slide"
                         />
                         <Carousel.Caption>
@@ -24,7 +24,7 @@ const Headerbanner = () => {
                         <img
                             style={{ height: "500px" }}
                             className="d-block w-100"
-                            src={img2}
+                            src='https://www.tricasol.com/wp-content/uploads/2019/09/e-commerce-banner-1024x341.jpg'
                             alt="Second slide"
                         />
 
@@ -36,7 +36,7 @@ const Headerbanner = () => {
                         <img
                             style={{ height: "500px" }}
                             className="d-block w-100"
-                            src={img3}
+                            src='https://img.freepik.com/free-psd/banner-template-online-shopping_23-2148559048.jpg?w=2000'
                             alt="Third slide"
                         />
 

@@ -23,20 +23,18 @@ const Footer = () => {
                                 <div className="footer-list">
                                     <h5>Home</h5>
                                     <h5>About</h5>
-                                    <h5>Bikes</h5>
-                                    <h5>Engine Oil</h5>
-                                    <h5>Services</h5>
+                                    <h5>Service Center</h5>
+                                    <h5>Careers</h5>
+                                    <h5>Contact Us</h5>
                                 </div>
                             </div>
                         </Grid>
                         <Grid item xs={12} md={3}>
                             <div className="footer">
                                 <div className="footer-list">
-                                    <h5>Buy Now</h5>
-                                    <h5>News</h5>
-                                    <h5>Career</h5>
-                                    <h5>Bike Financing</h5>
-                                    <h5>Legal Policy</h5>
+                                    <h5>EMI Policy</h5>
+                                    <h5>Warranty Policy</h5>
+                                   
                                 </div>
                             </div>
                         </Grid>

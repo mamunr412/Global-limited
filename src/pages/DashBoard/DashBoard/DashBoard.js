@@ -17,8 +17,8 @@ import Review from '../Review/Review';
 import DashboardHome from '../DashboardHome/DashboardHome';
 import MyOder from '../MyOder/MyOder';
 import ManageAllOder from '../ManageAllOder/ManageAllOder';
-import AddProduct from '../AddProduct/AddProduct';
-import ManageProduct from '../ManageProduct/ManageProduct';
+
+
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 
@@ -44,9 +44,9 @@ function DashBoard(props) {
             {!admin && <Box>
                 <Link
                     style={{ textDecoration: 'none' }}
-                    to='/collection'> <Button
+                    to='/products'> <Button
                         sx={{ fontSize: "18px", color: "black" }}
-                        color="inherit">Our Collection</Button> </Link>
+                        color="inherit">ALL Product</Button> </Link>
                 <br />
 
                 <Link
@@ -73,15 +73,8 @@ function DashBoard(props) {
                     to={`${url}/allOders`}> <Button
                         sx={{ fontSize: "18px", color: "black" }} color="inherit">Manage All Orders</Button> </Link>
                 <br />
-                <Link
-                    style={{ textDecoration: 'none' }}
-                    to={`${url}/addProduct`}> <Button
-                        sx={{ fontSize: "18px", color: "black" }} color="inherit">Add A Prodcut</Button> </Link>
-                <br />
-                <Link
-                    style={{ textDecoration: 'none' }} to={`${url}/manageProduct`}> <Button
-                        sx={{ fontSize: "18px", color: "black" }} color="inherit">Manage Products</Button> </Link>
-                <br />
+           
+                
                 <Link
                     style={{ textDecoration: 'none' }}
                     to={`${url}/makeAdmin`}> <Button
@@ -178,12 +171,7 @@ function DashBoard(props) {
                     <AdminRoute path={`${path}/allOders`}>
                         <ManageAllOder></ManageAllOder>
                     </AdminRoute>
-                    <AdminRoute path={`${path}/addProduct`}>
-                        <AddProduct></AddProduct>
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/manageProduct`}>
-                        <ManageProduct></ManageProduct>
-                    </AdminRoute>
+                
                     <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
                     </AdminRoute>

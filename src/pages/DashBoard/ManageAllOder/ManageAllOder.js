@@ -3,34 +3,38 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { Box } from '@mui/system';
 import Grid from '@mui/material/Grid';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import ManageSingleOder from '../ManageSingleOder/ManageSingleOder';
+import Card from 'react-bootstrap/Card';
+
+
 
 const ManageAllOder = () => {
-    const [allOders, setAllOders] = useState([]);
-    useEffect(() => {
-        fetch('https://lit-fjord-60113.herokuapp.com/allOders')
-            .then(res => res.json())
-            .then(data => setAllOders(data))
-    }, [allOders])
-
+  
+    const order =JSON.parse(localStorage.getItem('products'))
 
     return (
         <div>
             <Container>
-                <Typography variant="h4" gutterBottom component="div">
+                <Typography variant="h4" gutterBottom component="div" className='mb-4'>
                     Manage All Oders
                 </Typography>
 
                 <Box sx={{ flexGrow: 1 }}>
                     <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                        {allOders.map(singleOder => <ManageSingleOder
-                            key={singleOder._id}
-                            singleOder={singleOder}
-                            allOders={allOders}
-                            setAllOders={setAllOders}
-                        ></ManageSingleOder>)}
+                       {order?.name? <div>
+                        <Card style={{ width: '18rem' }} className='mb-3'>
+      <Card.Img variant="top" src={`https://idbdev.com/motion2/public/images/${order.image}`} />
+      <Card.Body>
+        <Card.Title>{order.name}</Card.Title>
+        <Card.Text>
+
+      <h5 >sale-Price: {order.sale_price}</h5>
+        </Card.Text>
+    
+       
+      {/* ))} */}
+      </Card.Body>
+    </Card>
+                       </div>:<p> No Order Yet</p>} 
                     </Grid>
                 </Box>
             </Container>
