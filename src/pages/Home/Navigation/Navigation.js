@@ -215,13 +215,7 @@ export default function Navigation() {
                         >
                             <Button color="inherit">All Products</Button>
                         </NavLink>
-                        <NavLink
-                            style={{ color: 'white' }}
-                            to="/products"
-                            className={isActive =>
-                                "nav-link" + (!isActive ? " unselected" : "")
-                            }
-                        >
+                        
                            <React.Fragment >
                            <Button onClick={toggleDrawer('right', true)} color="inherit">Cart</Button>
          {/* <Button onClick={toggleDrawer('right', true)} variant="contained" color="secondary">
@@ -236,7 +230,7 @@ export default function Navigation() {
             {list('right')}
           </SwipeableDrawer>
         </React.Fragment>
-                        </NavLink>
+                       
                         <NavLink
                             style={{ color: 'white' }}
                             to="/dashboard"
